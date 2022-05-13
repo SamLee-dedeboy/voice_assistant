@@ -10,7 +10,7 @@ class Yt_Player:
         self.player = self.Instance.media_player_new()
         self.stop_flag = False
         self.now_playing = ""
-    def play(self,url):
+    def play(self, url, start_time):
         #YouTube(url).streams.first().download()
 
         #video = pafy.new(url)
@@ -20,7 +20,7 @@ class Yt_Player:
         
         Media = self.Instance.media_new(url)
         Media.get_mrl()
-        Media.add_option('start-time='+str(random.choice(steins_gate_player)))
+        Media.add_option('start-time='+start_time)
         self.player.set_media(Media)
         self.player.play()
         self.now_playing = url.split(".")[0]
