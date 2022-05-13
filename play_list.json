@@ -1,0 +1,18 @@
+{
+    "play_list":[
+    {
+        "name": "steins_gate",
+        "format": "seconds", 
+        "time_stamp": [0, 125, 283, 365, 457, 710, 838, 919, 1170, 1323],
+        "url": "steins gate.3gpp"
+    },
+    { 
+        "name": "dark_academia",
+        "format": "min_secs", 
+        "time_stamp": ["00:00", "03:42", "08:17", "13:21", "17:22", "21:05", "23:14", 
+            "29:01", "31:20", "38:00", "40:56", "45:39", "49:23", "55:13", "58:00"],
+        "url": "dark academia.3gpp"
+    }
+]
+}
+    
