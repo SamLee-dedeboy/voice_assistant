@@ -6,6 +6,7 @@ from difflib import SequenceMatcher
 import json
 from play_yt import Yt_Player
 import random
+import os
 class Play_list:
     def __init__(self, play_list_data):
         self.play_list_data = json.load(open(play_list_data))["play_list"]
@@ -41,6 +42,11 @@ class Executor:
             self.player.play(url, start)
         if 'stop' in sentence:
             self.player.stop()
+        if 'open' in sentence:
+            #target = open_manager.extract_target(sentence)
+            target = "taskmgr"
+            os.system(target)
+
         return True, sentence
 
     def extract_play_target(self, sentence):
