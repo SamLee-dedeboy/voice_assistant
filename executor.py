@@ -15,11 +15,13 @@ class Executor:
         if 'alexa' not in sentence:
             return False, sentence
         sentence = sentence.replace("alexa", "").strip()
+
         if 'play' in sentence:
             target = self.extract_play_target(sentence)
             self.media_player.play(target)
         if 'stop' in sentence:
             self.media_player.stop()
+
         if 'open' in sentence:
             #target = open_manager.extract_target(sentence)
             target = "taskmgr"
