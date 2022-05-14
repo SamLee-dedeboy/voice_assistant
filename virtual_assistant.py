@@ -2,7 +2,6 @@ from logging.config import listen
 import speech_recognition as sr
 import pyttsx3
 from executor import Executor
-import threading
 
 def main():
         listener = sr.Recognizer()
@@ -19,12 +18,11 @@ def main():
                     voice = listener.listen(source)
                     command = listener.recognize_google(voice).lower()
                     print(command)
-                    #res, response = threading.Thread(target=executor.execute_command, args=(command,))
-                    t = threading.Thread(target=executor.execute_command, args=(command,))
-                    t.start()
-                    # if res:
-                    #     voice_engine.say(response)
-                    #     voice_engine.runAndWait()
+                    res, response = executor.execute_command(command)
+                    if res:
+                        print(response)
+                        #voice_engine.say(response)
+                        #voice_engine.runAndWait()
                 except:
                     pass
         # except:

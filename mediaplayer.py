@@ -28,6 +28,7 @@ class MediaPlayer:
         self.play_list = self.play_list_manager.get_play_list()
         self.player = Yt_Player()
     def play(self, target):
+        print("Media Player playing", target)
         start = self.play_list_manager.get_random_start(target)
         url = self.play_list_manager.get_url_by_name(target)
         self.player.play(start_time=start, url=url)

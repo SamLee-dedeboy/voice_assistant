@@ -6,6 +6,7 @@ from difflib import SequenceMatcher
 
 import os
 from mediaplayer import MediaPlayer
+import threading
 
 
 class Executor:
@@ -18,7 +19,10 @@ class Executor:
 
         if 'play' in sentence:
             target = self.extract_play_target(sentence)
-            self.media_player.play(target)
+            t1 = threading.Thread(target=self.media_player.play, args=(target,))
+            t1.start()
+            return True, 'playing ' + target
+
         if 'stop' in sentence:
             self.media_player.stop()
 
