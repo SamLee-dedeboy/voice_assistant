@@ -10,6 +10,7 @@ class Yt_Player:
         self.player = self.Instance.media_player_new()
         self.stop_flag = False
         self.now_playing = ""
+        
     def play(self, url, start_time):
         #YouTube(url).streams.first().download()
 
